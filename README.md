@@ -1,10 +1,8 @@
 # Jekyll Pages Directory Plugin
 
-Defines a `_pages` subdirectory which outputs into the root of your site.
+##### Defines a `_pages` directory for page files which routes its contents relative to the project root.
 
-Jekyll does a great job of keeping things tidy until you have more than a couple static pages. Unlike posts, which are nicely contained within the `_posts` directory, page data and containing subdirectories end up scattered throughout the project root. *Jekyll Pages Directory* helps keep your project root clean by defining a `_pages` subdirectory in which to store page data.
-
-Only page files should be stored in `_pages`. Other file types will not behave as expected.
+**Jekyll** does a great job of keeping things tidy until you have more than a couple static pages. Unlike posts, which are nicely contained within the `_posts` directory, page data and containing subdirectories end up scattered throughout the project root. **Jekyll Pages Directory** helps keep your project root clean by defining a `_pages` directory in which to store page data.
 
 
 
@@ -28,25 +26,28 @@ pages: ./_static_pages
 ```
 
 
+Only page files should be stored in the `_pages` directory. Other file types will not behave as expected.
+
+
 
 ## Output Routing
 
 
-Files in your `_pages` directory are routed as if they were in your project root, so `_pages/foo/bar.html` will be output to `_site/foo/bar.html`.
+Files in `_pages` are routed relative to your project root, so `_pages/foo/bar.html` will be output to `_site/foo/bar.html`.
 
 
 
 ## index.html
 
-Some Jekyll functions require that `index.html` be present in the project root, so you should leave `index.html` in the project root.
+Some Jekyll functions require that the main `index.html` be present in the project root, so it should remain there and not be moved into `_pages`.
 
 
 
 ## Compatibility
 
-*Jekyll Pages Directory* should work with any plugin that is not accessing page data files directly, but only limited compatibility testing has been done.
+**Jekyll Pages Directory** should work with any plugin that is not accessing page data files directly, but only limited compatibility testing has been done.
 
-If you encounter an issue, please submit a pull request or report it in the [Github issue tracker](https://github.com/bbakersmith/jekyll-pages-directory/issues).
+If you encounter an issue, please submit a pull request or bug report through the [Github issue tracker](https://github.com/bbakersmith/jekyll-pages-directory/issues).
 
 
 
