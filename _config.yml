@@ -1,0 +1,10 @@
+name: Jekyll _Pages Directory Demo
+markdown: redcarpet
+pygments: false
+
+pages: ./_pages
+
+exclude:
+  - LICENSE
+  - README.md
+  - spec

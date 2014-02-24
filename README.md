@@ -1,4 +1,4 @@
-# Jekyll Pages Directory Plugin
+# Jekyll _Pages Directory Plugin
 
 ##### Defines a `_pages` directory for page files which routes its contents relative to the project root.
 
@@ -8,7 +8,7 @@
 
 ## Installation
 
-Simply copy `_plugins/jekyll-pages-dir.rb` into your project's `_plugins` directory.
+Simply copy `_plugins/jekyll-pages-directory.rb` into your project's `_plugins` directory.
 
 
 
