@@ -1,16 +1,18 @@
 # Jekyll Pages Directory Plugin
 
-Defines a _pages subdirectory which outputs into the root of your site.
+Defines a `_pages` subdirectory which outputs into the root of your site.
 
-Jekyll does a great job of keeping things tidy until you have more than a couple static pages. Unlike posts, which are nicely contained within the `_posts` directory, page data and containting subdirectories end up scattered throughout your project root. *Jekyll Pages Directory* helps keep your project root clean by defining a _pages subdirectory in which to store page data.  
+Jekyll does a great job of keeping things tidy until you have more than a couple static pages. Unlike posts, which are nicely contained within the `_posts` directory, page data and containing subdirectories end up scattered throughout the project root. *Jekyll Pages Directory* helps keep your project root clean by defining a `_pages` subdirectory in which to store page data.
 
-Files in your _pages directory behave is if they were in your project root, so `_pages/foo/bar.html` will be output to `_site/foo/bar.html`.
+Only page files should be stored in `_pages`. Other file types will not behave as expected.
 
-Only page files should be stored in _pages. Other file types will not behave as expected.
+
 
 ## Installation
 
 Simply copy `_plugins/jekyll-pages-dir.rb` into your project's `_plugins` directory.
+
+
 
 ## Usage
 
@@ -21,25 +23,38 @@ To specify another directory instead, set the `pages` configuration option just 
 ```yaml
 # _config.yml
 
-pages: ./_pages # default
+pages: ./_static_pages
 
 ```
 
+
+
+## Output Routing
+
+
+Files in your `_pages` directory are routed as if they were in your project root, so `_pages/foo/bar.html` will be output to `_site/foo/bar.html`.
+
+
+
 ## index.html
 
-Some Jekyll functions require that index.html be present in the project root, so it is recommended that you maintain index.html in the project root.
+Some Jekyll functions require that `index.html` be present in the project root, so you should leave `index.html` in the project root.
+
+
 
 ## Compatibility
 
 *Jekyll Pages Directory* should work with any plugin that is not accessing page data files directly, but only limited compatibility testing has been done.
 
-If you encounter an issue, please submit a pull request or report it in the Github issue tracker.
+If you encounter an issue, please submit a pull request or report it in the [Github issue tracker](https://github.com/bbakersmith/jekyll-pages-directory/issues).
+
+
 
 ## License
 
 The MIT License (MIT)
 
-Copyright (c) 2014 Ben Baker-Smith (bitsynthesis.com)[http://bitsynthesis.com]
+Copyright (c) 2014 Ben Baker-Smith
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
