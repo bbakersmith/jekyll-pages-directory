@@ -1,4 +1,4 @@
-# Jekyll _Pages Directory Plugin
+# Jekyll Pages Directory Plugin
 
 ##### Defines a `_pages` directory for page files which routes its contents relative to the project root.
 
