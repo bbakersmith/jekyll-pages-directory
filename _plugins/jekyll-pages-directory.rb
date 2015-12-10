@@ -1,11 +1,8 @@
 module Jekyll
-
-
   class PagesDirGenerator < Generator
-
     def generate(site)
       pages_dir = site.config['pages'] || './_pages'
-      all_raw_paths = Dir["#{pages_dir}/**/*"]      
+      all_raw_paths = Dir["#{pages_dir}/**/*"]
       all_raw_paths.each do |f|
 
         if File.file?(File.join(site.source, '/', f))
@@ -13,10 +10,10 @@ module Jekyll
           clean_filepath = f.gsub(/^#{pages_dir}\//, '')
           clean_dir = extract_directory(clean_filepath)
 
-          site.pages << PagesDirPage.new(site, 
-                                         site.source, 
-                                         clean_dir, 
-                                         filename, 
+          site.pages << PagesDirPage.new(site,
+                                         site.source,
+                                         clean_dir,
+                                         filename,
                                          pages_dir)
 
         end
@@ -31,9 +28,7 @@ module Jekyll
         return ''
       end
     end
-
   end
-
 
   class PagesDirPage < Page
 
@@ -44,12 +39,13 @@ module Jekyll
       @name = name
 
       process(name)
-
       read_yaml(File.join(base, pagesdir, dir), name)
+
+      data.default_proc = proc do |hash, key|
+        site.frontmatter_defaults.find(File.join(dir, name), type, key)
+      end
+
+      Jekyll::Hooks.trigger :pages, :post_init, self
     end
-
   end
-
-
 end
-

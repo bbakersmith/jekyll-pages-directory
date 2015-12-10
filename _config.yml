@@ -1,8 +1,14 @@
 name: Jekyll _Pages Directory Demo
 markdown: redcarpet
-pygments: false
+highlighter: false
 
 pages: ./_pages
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: page
 
 exclude:
   - LICENSE
